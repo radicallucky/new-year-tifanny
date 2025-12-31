@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Tifanny ❤️</title>
+
+<style>
+/* ---------- GLOBAL ---------- */
+body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  overflow: hidden;
+}
+
+/* ---------- SLIDER ---------- */
+.slider {
+  display: flex;
+  width: 400vw;
+  height: 100vh;
+  transition: transform 0.8s ease;
+}
+
+.slide {
+  width: 100vw;
+  height: 100vh;
+  padding: 40px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+}
+
+/* ---------- CONTENT BOX ---------- */
+.box {
+  background: rgba(255,255,255,0.18);
+  padding: 30px;
+  border-radius: 20px;
+  max-width: 600px;
+  animation: fadeIn 1.5s ease;
+}
+
+/* ---------- PROMISE PAPER ---------- */
+.paper {
+  background: #fff;
+  color: #333;
+  padding: 25px;
+  border-radius: 15px;
+}
+
+/* ---------- FINGERPRINT ---------- */
+.fingerprint {
+  font-size: 55px;
+  margin-top: 15px;
+  cursor: pointer;
+  animation: pulse 1.5s infinite;
+}
+
+.sealed {
+  display: none;
+  color: green;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* ---------- NAV BUTTONS ---------- */
+.nav {
+  position: fixed;
+  bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+button {
+  background: rgba(255,255,255,0.3);
+  border: none;
+  padding: 12px 20px;
+  border-radius: 30px;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* ---------- ANIMATIONS ---------- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.15); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.7; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- MUSIC -->
+<audio autoplay loop>
+  <source src="songs/lovers-rock.mp3" type="audio/mpeg">
+</audio>
+
+<!-- SLIDES -->
+<div class="slider" id="slider">
+
+  <!-- SLIDE 1 -->
+  <div class="slide">
+    <div class="box">
+      <h1>Happy New Year, Tifanny ❤️</h1>
+      <p>Swipe or tap next ✨</p>
+    </div>
+  </div>
+
+  <!-- SLIDE 2 -->
+  <div class="slide">
+    <div class="box">
+      <h2>A Message For You 🤍</h2>
+      <p>
+        This year, I don’t want perfection.  
+        I just want **you**, our love,  
+        and a future we choose every day.
+      </p>
+    </div>
+  </div>
+
+  <!-- SLIDE 3 -->
+  <div class="slide">
+    <div class="box">
+      <h2>Our Future Goals ✨</h2>
+      <ul style="text-align:left;">
+        <li>Travel together 🌍</li>
+        <li>Support each other 💫</li>
+        <li>Build a peaceful life 🏡</li>
+        <li>Grow old together 🤍</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SLIDE 4 -->
+  <div class="slide">
+    <div class="box">
+      <h2>Our Promise 💍</h2>
+      <div class="paper">
+        <p>
+          I promise that no matter what happens,  
+          **we will stay together forever.**
+        </p>
+        <div class="fingerprint" onclick="seal()">🖐️</div>
+        <div class="sealed" id="sealedText">Promise Sealed ❤️</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- NAVIGATION -->
+<div class="nav">
+  <button onclick="prev()">⬅ Back</button>
+  <button onclick="next()">Next ➡</button>
+</div>
+
+<script>
+let index = 0;
+
+function updateSlide() {
+  document.getElementById("slider").style.transform =
+    `translateX(-${index * 100}vw)`;
+}
+
+function next() {
+  if (index < 3) index++;
+  updateSlide();
+}
+
+function prev() {
+  if (index > 0) index--;
+  updateSlide();
+}
+
+function seal() {
+  document.getElementById("sealedText").style.display = "block";
+}
+</script>
+
+</body>
+</html>
